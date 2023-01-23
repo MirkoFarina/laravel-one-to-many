@@ -1,0 +1,108 @@
+@use "../variables" as *;
+
+//UTILITY
+    .box-edit {
+        box-shadow: 1px 8px 12px 0px rgba(0,0,0,0.68);
+        border-radius: 5px;
+    }
+
+    .secondary-color {
+        color: $secondary-color;
+    }
+
+    .mf-admin-container {
+        background-color: $primary-color;
+    }
+
+    .mf-admin-card {
+        background-color: $primary-color;
+        width: 500px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .mf-btn-search {
+        border: none;
+        padding: 5px 10px;
+        background-color: $secondary-color;
+        color: white;
+        transition: all .4s;
+        &:focus {
+            outline: 1px solid lighten($secondary-color, 30%);
+        }
+        &:hover {
+            background-color: white;
+            color: $secondary-color;
+        }
+    }
+//  /UTILITY
+
+// HEADER AND ASIDE
+#admin-header, #nav-aside {
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all .4s;
+        &:hover {
+            color: white;
+        }
+        &.active {
+            color: white;
+            padding-bottom: 5px;
+            border-bottom: white 1px solid;
+        }
+    }
+}
+//       /HEADER AND ASIDE
+
+// LAYOUT ADMIN
+#main-admin {
+    overflow-y: auto;
+    height: calc(100vh - 70px);
+}
+
+// PROJECTS > INDEX
+
+table {
+    a {
+        color: white;
+        text-decoration: none;
+        transition: all .5s;
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
+// PAGINATION IN INDEX > PROJECTS
+.mf-pagination {
+    .pagination {
+        .page-item.active .page-link {
+            color: white;
+        }
+        .page-link{
+            border: none;
+            background-color: $primary-color;
+            color: $secondary-color;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: .9rem;
+        }
+    }
+
+}
+// /PROJECTS > INDEX
+
+
+// PROJECT > CREATE AND PROJECT > EDIT
+
+    .show-img {
+        img {
+            width: 200px;
+        }
+    }
+
+//     /PROJECT > CREATE AND PROJECT > EDIT
+

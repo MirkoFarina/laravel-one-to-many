@@ -1,0 +1,21 @@
+// VARIABLES
+@use "./partials/variables";
+
+//GENERAL
+@use "./partials/general";
+
+
+//*************************** ADMIN ***********************
+
+// GENERAL-ADMIN
+@use "./partials/admin/general-admin";
+
+// HEADER
+@use "./partials/admin/header-admin";
+
+// ASIDE
+@use "./partials/admin/aside-admin";
+
+
+// BOOTSTRAP
+@import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,12 @@
+@use "../variables" as *;
+#nav-aside {
+    height: calc(100vh - 70px);
+    ul {
+        li {
+            margin-bottom: 10px;
+            a {
+                display: inline-block;
+            }
+        }
+    }
+}
