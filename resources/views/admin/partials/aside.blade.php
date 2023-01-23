@@ -26,13 +26,19 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a class="{{ Route::CurrentRouteName() === 'admin.projects.projects-type' ? 'active' : '' }}" href=" {{route('admin.projects.projects-type')}} ">
-                        <i class="fa-solid fa-table-list"></i>
-                        LISTA PER TIPO
+                <li class="ps-3">
+                    <a href=" {{ route('admin.type.index') }} ">
+                        <i class="fa-solid fa-layer-group"></i>
+                        TYPES
                     </a>
                 </li>
             </ul>
+        </li>
+        <li class="ps-3">
+            <a class="{{ Route::CurrentRouteName() === 'admin.projects.projects-type' ? 'active' : '' }}" href=" {{route('admin.projects.projects-type')}} ">
+                <i class="fa-solid fa-table-list"></i>
+                LISTA PER TIPO
+            </a>
         </li>
     </ul>
 </div>
