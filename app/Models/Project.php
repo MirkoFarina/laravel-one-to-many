@@ -16,7 +16,8 @@ class Project extends Model
         'client_name',
         'summary',
         'cover_image',
-        'image_original_name'
+        'image_original_name',
+        'type_id'
     ];
 
     public static function generator_slug ($title){
