@@ -24,9 +24,12 @@
     <div class="mf-admin-card box-edit p-2">
         <img src="{{ asset('storage/' . $project->cover_image) }} " class="card-img-top" alt=" {{ $project->image_original_name }} ">
         <div class="card-body p-5">
-          <h5 class="card-title">{{ $project->name }}</h5>
-          <p class="card-text">{{ $project->client_name }}</p>
-          <p class="card-text"> DESCRIZIONE: <br> {{ $project->summary }}</p>
+            <h5 class="card-title">{{ $project->name }} </h5>
+            <p class="card-text">{{ $project->client_name }}</p>
+            <p class="card-text"> DESCRIZIONE: <br> {{ $project->summary }}</p>
+            <div class="text-center">
+                <span class="badge text-bg-info text-uppercase"> {{$project->type->name}} </span>
+            </div>
         </div>
       </div>
 </div>
