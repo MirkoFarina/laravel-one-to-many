@@ -32,6 +32,17 @@
                     </div>
                 @enderror
             </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="type">TIPO:</label>
+                <select  class="form-select" name="type_id">
+                    <option value="">Seleziona il Tipo:</option>
+                    @foreach ($types as $type)
+                        <option @if($type->id == old('type_id', $project->type_id)) selected @endif value="{{$type->id}}"> {{$type->name}} </option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="mb-3">
                 <label for="client_name" class="form-label @error('client_name') text-danger @enderror">CLIENT *</label>
                 <input type="text" class="form-control @error('client_name') is-invalid @enderror" id="client_name"
@@ -42,6 +53,7 @@
                     </div>
                 @enderror
             </div>
+
             <div class="mb-3">
                 <label for="cover_image" class="form-label @error('cover_image') text-danger @enderror">UPLOAD image *</label>
                 <input onchange="showImg(event)" type="file" class="form-control mb-2 @error('cover_image') is-invalid @enderror" id="cover_image"
@@ -55,11 +67,13 @@
                     <img  id="image_thumb_up" src="" alt="">
                 </div>
             </div>
+
             <div class="mb-3">
                 <label for="summary" class="form-label">Descrizione: </label>
                 <textarea class="form-control" id="summary" name="summary" rows="3">{{ old('summary',$project->summary) }}
                 </textarea>
             </div>
+
             <div class="mb-3 text-center">
                 <button class="btn btn-success" type="submit"> INVIA </button>
             </div>

@@ -47,6 +47,7 @@
                     </div>
                 @enderror
             </div>
+
             <div class="mb-3">
                 <label for="cover_image" class="form-label @error('cover_image') text-danger @enderror">UPLOAD image
                 </label>
@@ -61,11 +62,14 @@
                 <div class="show-img">
                     <img id="image_thumb" src="" alt="">
                 </div>
+
             </div>
+
             <div class="mb-3">
                 <label for="summary" class="form-label">Descrizione: </label>
                 <textarea class="form-control" id="summary" name="summary" rows="3">{{ old('summary') }}</textarea>
             </div>
+
             <div class="mb-3 text-center">
                 <button class="btn btn-success" type="submit"> INVIA </button>
             </div>

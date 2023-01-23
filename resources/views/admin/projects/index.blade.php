@@ -36,7 +36,7 @@
                     <tr>
                         <th scope="row"> {{ $project->id }} </th>
                         <td> {{ $project->name }}</td>
-                        <td><span class="badge text-bg-info text-uppercase"> {{$project->type->name}} </span></td>
+                        <td><span class="badge text-bg-info text-uppercase">{{$project->type?->name}}</span></td>
                         <td> {{ $project->client_name }} </td>
                         <td>
                             <a class="btn btn-primary" href=" {{ route('admin.project.show', $project) }} ">
