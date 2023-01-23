@@ -15,6 +15,7 @@ Route::middleware(['auth','verified'])
     ->prefix('admin')
     ->group(function(){
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/projects/projects-type', [ProjectController::class, 'projects_type'])->name('projects.projects-type');
         Route::resource('project', ProjectController::class);
         Route::get('/groupby/{column}/{direction}',[ProjectController::class, 'groupby'])->name('project.groupby');
 });

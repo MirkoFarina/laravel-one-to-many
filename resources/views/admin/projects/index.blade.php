@@ -11,7 +11,7 @@
                 TABELLA PROGETTI
             </h1>
             <div>
-                <form action="{{route('admin.project.index')}}" method="GET">
+                <form class="my-2" action="{{route('admin.project.index')}}" method="GET">
                     @csrf
                     <input name="search" class="mf-btn-search box-edit" type="text" placeholder="CERCA PER NOME ...">
                     <button class="mf-btn-search box-edit" type="submit">VAI</button>

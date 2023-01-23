@@ -1,9 +1,7 @@
 <div class="pt-5" id="nav-aside">
     <ul class="m-0 list-unstyled">
-        <li class="ps-3">
-            <a href="#">
-                {{ Auth::user()->name }} :
-            </a>
+        <li class="ps-3 secondary-color">
+               USER: {{ Auth::user()->name }}
         </li>
         <li class="ps-3">
             <a href=" {{ route('admin.dashboard') }} "
@@ -27,6 +25,12 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a class="{{ Route::CurrentRouteName() === 'admin.projects.projects-type' ? 'active' : '' }}" href=" {{route('admin.projects.projects-type')}} ">
+                        <i class="fa-solid fa-table-list"></i>
+                        LISTA PER TIPO
+                    </a>
                 </li>
             </ul>
         </li>

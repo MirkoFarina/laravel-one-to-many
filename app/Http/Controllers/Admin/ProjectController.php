@@ -30,6 +30,11 @@ class ProjectController extends Controller
         return view('admin.projects.index', compact('projects', 'direction'));
     }
 
+    public function projects_type(){
+        $types = Type::all();
+        return view('admin.projects.project-type', compact('types'));
+    }
+
     public function groupby($column, $direction)
     {
         $direction = $direction === 'desc' ? 'asc' : 'desc';
