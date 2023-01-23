@@ -27,20 +27,27 @@
                     <tr>
                         <th scope="col"> TIPO </th>
                         <th class="text-center" scope="col"> COUNT PER TIPO </th>
-
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($types as $type)
                         <tr>
-                            <td> {{ $type->name }}</td>
+                            <td>
+                                <form action=" {{ route('admin.type.update', $type) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <input class="border-0 bg-transparent text-white" type="text" name="name" value="{{ $type->name }}">
+                                    <button type="submit" class="btn btn-warning me-3">UPDATE</button>
+                                    @include('admin.partials.form-delete', [
+                                    'title' => $type->name,
+                                    'route' => 'admin.type.destroy',
+                                    'element' => $type,
+                                ])
+                                </form>
+                            </td>
                             <td class="text-center"> <a
-                                    href="{{ route('admin.projects.projects-type') }}">{{ count($type->projects) }}</a> </td>
-                            {{-- @include('admin.partials.form-delete', [
-                                    'title' => $project->name,
-                                    'route' => 'admin.project.destroy',
-                                    'element' => $project,
-                                ]) --}}
+                                    href="{{ route('admin.projects.projects-type') }}">{{ count($type->projects) }}</a>
+                            </td>
                         </tr>
                     @empty
                         <td colspan="4" class="text-center"> NESSUN RISULATO TROVATO </td>

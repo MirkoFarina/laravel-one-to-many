@@ -49,7 +49,7 @@ class TypeController extends Controller
         $new_type->fill($form_data);
         $new_type->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('messages', "$new_type->name aggiunto con successo");
     }
 
     /**
@@ -81,9 +81,17 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Type $type)
     {
-        //
+        $form_data = $request->validate([
+            'name' => 'required | unique:types'
+        ]);
+
+        $slug = Str::slug($form_data['name']);
+        $form_data['slug'] = $slug;
+
+        $type->update($form_data);
+        return redirect()->back()->with('messages', "$type->name è stato modificato correttamente");
     }
 
     /**
@@ -92,8 +100,9 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return redirect()->back()->with('delete', "$type->name è stato eliminato con successo");
     }
 }
